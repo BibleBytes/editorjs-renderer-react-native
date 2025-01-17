@@ -1,0 +1,157 @@
+import { decode } from "html-entities";
+import { type ReactNode, createElement, useCallback } from "react";
+import React from "react";
+import { Text } from "react-native";
+import type { RendererConfigFull } from "../types";
+
+const DEFAULT_TAGS = ["b", "code", "i", "mark", "u"];
+
+export const useParser = () => {
+    const getTagName = useCallback((value: string) => {
+        const startTagName = value.trim().substring(1);
+        const indexOfEndTagName = startTagName.match(/ (.*?)>/)?.index ?? 1;
+        return startTagName.substring(0, Number(indexOfEndTagName) ?? 1);
+    }, []);
+
+    const getComponentByName = useCallback(
+        (config: RendererConfigFull, name: string) => {
+            switch (name) {
+                case "b":
+                    return config.tools.bold;
+                // FIXME - Add Code
+                // case 'code': return Code;
+                case "i":
+                    return config.tools.italic;
+                case "mark":
+                    return config.tools.mark;
+                case "u":
+                    return config.tools.underline;
+                default:
+                    return Text;
+            }
+        },
+        [],
+    );
+
+    const createElementByTagName = useCallback(
+        (
+            config: RendererConfigFull,
+            tagChildren: string | ReactNode,
+            tagName: string,
+        ): ReactNode => {
+            return createElement(
+                getComponentByName(config, tagName) as typeof Text,
+                null,
+                tagChildren,
+            );
+        },
+        [getComponentByName],
+    );
+
+    const matchTag = useCallback(
+        (buffer: string, tags: string[]): RegExpMatchArray | null => {
+            const { match } = tags.reduce(
+                (acum, tag) => {
+                    const currentMatch = buffer.match(
+                        new RegExp(`<${tag}(.*?)>`),
+                    );
+
+                    if (!currentMatch) return acum;
+                    if (acum.match == null) {
+                        acum.match = currentMatch;
+                        return acum;
+                    }
+
+                    const currentMatchIsPreviousAcumMatch =
+                        currentMatch.index != null &&
+                        acum.match.index != null &&
+                        currentMatch.index < acum.match.index;
+
+                    if (currentMatchIsPreviousAcumMatch) {
+                        acum.match = currentMatch;
+                        return acum;
+                    }
+
+                    return acum;
+                },
+                { match: null } as { match: RegExpMatchArray | null },
+            );
+            return match;
+        },
+        [],
+    );
+
+    const parser = useCallback(
+        (config: RendererConfigFull, buffer: string): JSX.Element => {
+            const firstMatchTag = matchTag(buffer, DEFAULT_TAGS);
+
+            if (firstMatchTag == null || firstMatchTag?.index == null) {
+                return <>{decode(buffer)}</>;
+            }
+
+            const stringAfterTargetTag = buffer.substring(
+                firstMatchTag.index + firstMatchTag[0].length,
+            );
+            const tagName = getTagName(firstMatchTag[0]);
+            const closeTag = stringAfterTargetTag.match(
+                new RegExp(`</${tagName}>`),
+            );
+            const nextOpenTag = matchTag(stringAfterTargetTag, DEFAULT_TAGS);
+
+            if (
+                closeTag?.index == null ||
+                (closeTag.index == null && nextOpenTag?.index == null)
+            ) {
+                return <>{decode(buffer)}</>;
+            }
+
+            if (
+                nextOpenTag?.index == null ||
+                closeTag.index < nextOpenTag.index
+            ) {
+                const textBeforeTag = buffer.substring(0, firstMatchTag.index);
+                const tagText = stringAfterTargetTag.substring(
+                    0,
+                    closeTag.index,
+                );
+                const textAfterTag = stringAfterTargetTag.substring(
+                    closeTag.index + closeTag[0].length,
+                );
+                return (
+                    <>
+                        {textBeforeTag && decode(textBeforeTag)}
+                        {createElementByTagName(
+                            config,
+                            decode(tagText),
+                            tagName,
+                        )}
+                        {textAfterTag && parser(config, textAfterTag)}
+                    </>
+                );
+            }
+
+            const textBeforeTag = buffer.substring(0, firstMatchTag.index);
+            const tagText = buffer.substring(
+                firstMatchTag.index + firstMatchTag[0].length,
+            );
+            const textAfterTag = stringAfterTargetTag.substring(
+                closeTag.index + closeTag[0].length,
+            );
+
+            return (
+                <>
+                    {textBeforeTag && decode(textBeforeTag)}
+                    {createElementByTagName(
+                        config,
+                        parser(config, tagText.substring(0, closeTag.index)),
+                        tagName,
+                    )}
+                    {textAfterTag && parser(config, textAfterTag)}
+                </>
+            );
+        },
+        [matchTag, getTagName, createElementByTagName],
+    );
+
+    return { parser };
+};
