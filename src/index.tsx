@@ -1,20 +1,26 @@
+import React from "react";
 import { useMemo } from "react";
 import { Text, View } from "react-native";
 import { DEFAULT_RENDERER_CONFIG } from "./default";
 import type { EditorJSBlock } from "./editorjs/types";
-import type {
-    RendererConfig,
-    RendererConfigFull,
-    RendererProps,
+import {
+    RendererAppearance,
+    type RendererConfig,
+    type RendererConfigFull,
+    type RendererProps,
 } from "./types";
 
 export const Renderer = (props: RendererProps) => {
     const config = useMemo(() => getConfig(props.config), [props.config]);
+    const appearence = useMemo(
+        () => props.appearance || RendererAppearance.light,
+        [props.appearance],
+    );
     return (
         <View>
             {props.data.blocks.map((block) => (
                 <View key={block.id || Date.now()}>
-                    {getComponent(config, block)}
+                    {getComponent(config, appearence, block)}
                 </View>
             ))}
         </View>
@@ -25,24 +31,25 @@ function getConfig(partialConfig: RendererConfig = {}): RendererConfigFull {
     return {
         ...DEFAULT_RENDERER_CONFIG,
         ...partialConfig,
-        tools: {
-            ...DEFAULT_RENDERER_CONFIG.tools,
-            ...partialConfig.tools,
+        components: {
+            ...DEFAULT_RENDERER_CONFIG.components,
+            ...partialConfig.components,
         },
     };
 }
 
 function getComponent(
     config: RendererConfigFull,
+    appearance: RendererAppearance,
     block: EditorJSBlock,
 ): JSX.Element {
-    if (block.type in config.tools) {
-        const Component = config.tools[block.type];
+    const Component = config.components[block.type];
+    if (Component) {
         return (
             <Component
                 data={block.data}
                 config={config}
-                appearance={config.appearance}
+                appearance={appearance}
             />
         );
     }
@@ -57,3 +64,5 @@ function getComponent(
     }
     return <View />;
 }
+
+export * from "./exports";

@@ -8,21 +8,28 @@ export enum RendererAppearance {
 type Component = React.ComponentType<any>;
 export type RendererConfig = Partial<RendererConfigFull>;
 export type RendererConfigFull = {
-    tools: {
-        [key: string]: Component;
-        header: Component;
-        bold: Component;
-        italic: Component;
-        mark: Component;
-        underline: Component;
-        paragraph: Component;
+    components: {
+        [key: string]: Component | undefined;
+        header?: Component;
+        bold?: Component;
+        italic?: Component;
+        mark?: Component;
+        underline?: Component;
+        paragraph?: Component;
+        delimiter?: Component;
+        linkTool?: Component;
+        personality?: Component;
+        quote?: Component;
+        image?: Component;
+        list?: Component;
+        code?: Component;
     };
-    appearance: RendererAppearance;
     enableFallback: boolean;
 };
 
 export type RendererProps = {
     data: EditorJSData;
+    appearance?: RendererAppearance;
     config?: RendererConfig;
 };
 

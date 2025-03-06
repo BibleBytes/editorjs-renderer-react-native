@@ -1,7 +1,10 @@
+import { createStyle } from "@/src/theme";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
-    underline: {
-        textDecorationLine: "underline",
-    },
+export const styles = createStyle(() => {
+    return StyleSheet.create({
+        underline: {
+            textDecorationLine: "underline",
+        },
+    });
 });

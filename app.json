@@ -2,14 +2,15 @@
     "expo": {
         "name": "EditorJS Render React Native",
         "slug": "editorjs-Render-react-native",
-        "scheme": "editorjs-Render-react-native",
+        "scheme": "editorjs-render",
         "version": "0.0.0",
         "orientation": "portrait",
         "userInterfaceStyle": "automatic",
         "newArchEnabled": true,
-        "entryPoint": "entry.ts",
+        "entryPoint": "./index.ts",
         "ios": {
-            "supportsTablet": true
+            "supportsTablet": true,
+            "bundleIdentifier": "com.yourname.yourapp"
         },
         "web": {
             "bundler": "metro",
