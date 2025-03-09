@@ -1,7 +1,10 @@
+import { createStyle } from "@/src/theme";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
-    italic: {
-        fontStyle: "italic",
-    },
+export const styles = createStyle(() => {
+    return StyleSheet.create({
+        italic: {
+            fontStyle: "italic",
+        },
+    });
 });

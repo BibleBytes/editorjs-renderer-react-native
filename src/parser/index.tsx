@@ -2,14 +2,14 @@ import { decode } from "html-entities";
 import { type ReactNode, createElement, useCallback } from "react";
 import React from "react";
 import { Text } from "react-native";
-import type { RendererConfigFull } from "../types";
+import type { RendererAppearance, RendererConfigFull } from "../types";
 
-const DEFAULT_TAGS = ["b", "code", "i", "mark", "u"];
+const DEFAULT_TAGS = ["b", "i", "mark", "u", "code"];
 
 export const useParser = () => {
     const getTagName = useCallback((value: string) => {
         const startTagName = value.trim().substring(1);
-        const indexOfEndTagName = startTagName.match(/ (.*?)>/)?.index ?? 1;
+        const indexOfEndTagName = startTagName.match(/(\s.*?)?>/)?.index ?? 1;
         return startTagName.substring(0, Number(indexOfEndTagName) ?? 1);
     }, []);
 
@@ -17,15 +17,15 @@ export const useParser = () => {
         (config: RendererConfigFull, name: string) => {
             switch (name) {
                 case "b":
-                    return config.tools.bold;
-                // FIXME - Add Code
-                // case 'code': return Code;
+                    return config.components.bold;
                 case "i":
-                    return config.tools.italic;
+                    return config.components.italic;
                 case "mark":
-                    return config.tools.mark;
+                    return config.components.mark;
                 case "u":
-                    return config.tools.underline;
+                    return config.components.underline;
+                case "code":
+                    return config.components.code;
                 default:
                     return Text;
             }
@@ -36,12 +36,16 @@ export const useParser = () => {
     const createElementByTagName = useCallback(
         (
             config: RendererConfigFull,
+            appearance: RendererAppearance,
             tagChildren: string | ReactNode,
             tagName: string,
         ): ReactNode => {
             return createElement(
                 getComponentByName(config, tagName) as typeof Text,
-                null,
+                {
+                    config,
+                    appearance,
+                } as unknown as null,
                 tagChildren,
             );
         },
@@ -82,7 +86,11 @@ export const useParser = () => {
     );
 
     const parser = useCallback(
-        (config: RendererConfigFull, buffer: string): JSX.Element => {
+        (
+            config: RendererConfigFull,
+            apparence: RendererAppearance,
+            buffer: string,
+        ): JSX.Element => {
             const firstMatchTag = matchTag(buffer, DEFAULT_TAGS);
 
             if (firstMatchTag == null || firstMatchTag?.index == null) {
@@ -94,7 +102,7 @@ export const useParser = () => {
             );
             const tagName = getTagName(firstMatchTag[0]);
             const closeTag = stringAfterTargetTag.match(
-                new RegExp(`</${tagName}>`),
+                new RegExp(`<\/${tagName}>`),
             );
             const nextOpenTag = matchTag(stringAfterTargetTag, DEFAULT_TAGS);
 
@@ -122,10 +130,12 @@ export const useParser = () => {
                         {textBeforeTag && decode(textBeforeTag)}
                         {createElementByTagName(
                             config,
+                            apparence,
                             decode(tagText),
                             tagName,
                         )}
-                        {textAfterTag && parser(config, textAfterTag)}
+                        {textAfterTag &&
+                            parser(config, apparence, textAfterTag)}
                     </>
                 );
             }
@@ -143,10 +153,15 @@ export const useParser = () => {
                     {textBeforeTag && decode(textBeforeTag)}
                     {createElementByTagName(
                         config,
-                        parser(config, tagText.substring(0, closeTag.index)),
+                        apparence,
+                        parser(
+                            config,
+                            apparence,
+                            tagText.substring(0, closeTag.index),
+                        ),
                         tagName,
                     )}
-                    {textAfterTag && parser(config, textAfterTag)}
+                    {textAfterTag && parser(config, apparence, textAfterTag)}
                 </>
             );
         },

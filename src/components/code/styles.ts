@@ -3,8 +3,9 @@ import { StyleSheet } from "react-native";
 
 export const styles = createStyle((theme) => {
     return StyleSheet.create({
-        bold: {
-            fontWeight: "700",
+        code: {
+            color: theme.textPrimary,
+            backgroundColor: theme.backgroundSecondary,
         },
     });
 });

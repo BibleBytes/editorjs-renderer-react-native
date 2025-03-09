@@ -1,11 +1,12 @@
+import { createStyle } from "@/src/theme";
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
-    paragraph: {
-        marginVertical: 8,
-        fontSize: 16,
-        color: "#292929",
-    },
+export const styles = createStyle((theme) => {
+    return StyleSheet.create({
+        paragraph: {
+            marginVertical: 8,
+            fontSize: 16,
+            color: theme.textPrimary,
+        },
+    });
 });
-
-export default styles;

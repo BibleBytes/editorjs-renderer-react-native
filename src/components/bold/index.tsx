@@ -1,17 +1,18 @@
+import { useStyle } from "@/src/theme";
+import React from "react";
 import { Text } from "react-native";
-import { styles } from "./styles";
+import { styles as stylesheet } from "./styles";
 import type { BoldProps } from "./types";
 
-const Bold = ({ style, properties, children }: BoldProps) => {
+export const Bold = (props: BoldProps) => {
+    const styles = useStyle(stylesheet, props.appearance);
     return (
         <Text
             allowFontScaling={true}
-            style={[styles.bold, style]}
-            {...properties}
+            style={[styles.bold, props.style]}
+            {...props.properties}
         >
-            {children}
+            {props.children}
         </Text>
     );
 };
-
-export { Bold };

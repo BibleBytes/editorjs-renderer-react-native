@@ -1,17 +1,18 @@
+import { useStyle } from "@/src/theme";
+import React from "react";
 import { Text } from "react-native";
-import { styles } from "./styles";
+import { styles as stylesheet } from "./styles";
 import type { MarkProps } from "./types";
 
-const Mark = ({ style, properties, children }: MarkProps) => {
+export const Mark = (props: MarkProps) => {
+    const styles = useStyle(stylesheet, props.appearance);
     return (
         <Text
             allowFontScaling={true}
-            style={[styles.mark, style]}
-            {...properties}
+            style={[styles.mark, props.style]}
+            {...props.properties}
         >
-            {children}
+            {props.children}
         </Text>
     );
 };
-
-export { Mark };

@@ -1,25 +1,25 @@
+import { useStyle } from "@/src/theme";
+import React from "react";
 import { useMemo } from "react";
 import { Text } from "react-native";
-import { styles } from "./styles";
+import { styles as stylesheet } from "./styles";
 import type { HeaderProps } from "./types";
 
-export const Header = ({
-    appearance,
-    data,
-    style,
-    properties,
-}: HeaderProps) => {
-    const headingStyle = useMemo(() => styles[`h${data.level}`], [data.level]);
-    const appearanceStyle = useMemo(() => styles[appearance], [appearance]);
+export const Header = (props: HeaderProps) => {
+    const styles = useStyle(stylesheet, props.appearance);
+    const headingStyle = useMemo(
+        () => styles[`h${props.data.level}`],
+        [props.data.level, styles],
+    );
     return (
         <Text
             accessible={true}
             accessibilityRole="header"
             allowFontScaling={true}
-            style={[styles.container, headingStyle, appearanceStyle, style]}
-            {...properties}
+            style={[styles.text, headingStyle, props.style]}
+            {...props.properties}
         >
-            {data.text}
+            {props.data.text}
         </Text>
     );
 };
