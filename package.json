@@ -1,13 +1,13 @@
 {
     "name": "@biblebytes/editorjs-renderer-react-native",
-    "version": "0.0.6",
+    "version": "0.0.0",
     "export-properties": {
         "main": "./index.ts",
         "module": "./dist/index.mjs",
         "types": "./dist/index.d.ts"
     },
     "scripts": {
-        "prepare": "npm run build && node prepare.js",
+        "prepare": "npm run build",
         "build": "tsup src/index.tsx --format esm,cjs --dts --minify --external react,react-native",
         "dev": "expo start --clear",
         "format": "biome check --write .",
