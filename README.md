@@ -52,14 +52,14 @@ import {
 } from '@biblebytes/editorjs-renderer-react-native';
 
 const data:EditorJSData = {
-  blocks: [{
+	blocks: [{
 		id: "header-1",
 		type: "header",
 		data: {
 			text: "Header 1",
 			level: 1,
 		},
-  }]
+	}]
 };
 
 const config:RendererConfig = {
@@ -67,15 +67,17 @@ const config:RendererConfig = {
 };
 
 export default function App() {
-  return (
-    <ScrollView style={{ backgroundColor: "white", padding: 10 }}>
-      <Renderer
+	return (
+		<>
+			<ScrollView style={{ backgroundColor: "white", padding: 10 }}>
+			<Renderer
 				data={data}
 				config={config}
 				appearance={RendererAppearance.light}
 			/>
-    </ScrollView>
-  )
+			</ScrollView>
+		</>
+	)
 }
 ```
 
@@ -136,10 +138,10 @@ const ThingComponent = (props: RendererComponentProps & { data: { text:string } 
 
 // Define the RendererConfig
 const config: RendererConfig = {
-  components: {
-    thing: ThingComponent,
-  },
-  enableFallback: false,
+	components: {
+		thing: ThingComponent,
+	},
+	enableFallback: false,
 };
 
 ```
