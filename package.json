@@ -14,7 +14,7 @@
         "lint": "biome lint . && tsc --noEmit",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "",
+    "author": "BibleBytes",
     "license": "MIT",
     "description": "A React Native viewer for JSON created by EditorJs",
     "dependencies": {
