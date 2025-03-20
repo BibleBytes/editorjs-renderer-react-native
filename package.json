@@ -7,7 +7,7 @@
         "types": "./dist/index.d.ts"
     },
     "scripts": {
-        "prepare": "npm run build",
+        "prepare": "node prepare.js && npm run build",
         "build": "tsup src/index.tsx --format esm,cjs --dts --minify --external react,react-native",
         "dev": "expo start --clear",
         "format": "biome check --write .",
