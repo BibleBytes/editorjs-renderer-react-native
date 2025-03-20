@@ -16,6 +16,7 @@
         "ignore": ["./dist", "./node_modules"]
     },
     "formatter": {
+        "enabled": true,
         "indentStyle": "space",
         "indentWidth": 4
     }
