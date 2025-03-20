@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Mon Mar 17 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Italic Component
+ *
+ */
+
 import { useStyle } from "@/src/theme";
 import React from "react";
 import { Text } from "react-native";
@@ -16,3 +29,7 @@ export const Italic = (props: ItalicProps) => {
         </Text>
     );
 };
+
+// When you make a vow to God, do not delay to fulfill it. He has no
+// pleasure in fools; fulfill your vow.
+// - Ecclesiastes 5:4

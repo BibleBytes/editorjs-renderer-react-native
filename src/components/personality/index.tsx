@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Personality Component
+ *
+ */
+
 import { useStyle } from "@/src/theme";
 import React from "react";
 import { useCallback } from "react";
@@ -98,3 +111,6 @@ export const Personality = (props: PersonalityProps) => {
         </TouchableOpacity>
     );
 };
+
+// A wise son brings joy to his father, but a foolish son brings grief to his mother.
+// - Proverbs 10:1

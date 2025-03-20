@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Parser
+ *
+ */
+
 import { decode } from "html-entities";
 import { type ReactNode, createElement, useCallback } from "react";
 import React from "react";
@@ -170,3 +183,7 @@ export const useParser = () => {
 
     return { parser };
 };
+
+// Consequently, faith comes from hearing the message, and the message is
+// heard through the word about Christ.
+// - Romans 10:17

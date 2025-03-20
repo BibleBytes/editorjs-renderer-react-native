@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Delimiter Component
+ *
+ */
+
 import { useStyle } from "@/src/theme";
 import { decode } from "html-entities";
 import React from "react";
@@ -31,3 +44,6 @@ export const Delimiter = (props: DelimiterProps) => {
         </View>
     );
 };
+
+// Turn my heart toward your statutes and not toward selfish gain.
+// - Psalm 119:36

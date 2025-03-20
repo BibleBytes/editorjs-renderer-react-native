@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: styles.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Delimiter Component Styles
+ *
+ */
+
 import { createStyle } from "@/src/theme";
 import { StyleSheet } from "react-native";
 
@@ -18,3 +31,7 @@ export const styles = createStyle((theme) => {
         },
     });
 });
+
+// About midnight Paul and Silas were praying and singing hymns to God, and
+// the other prisoners were listening to them.
+// - Acts 16:25

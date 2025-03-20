@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: exports.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Exports
+ *
+ */
+
 export * from "./components/bold";
 export * from "./components/bold/types";
 export * from "./components/code";
@@ -27,3 +40,7 @@ export * from "./components/underline/types";
 export * from "./editorjs/types";
 export * from "./parser";
 export * from "./types";
+
+// He will not let your foot slip—
+// he who watches over you will not slumber.
+// - Psalm 121:3

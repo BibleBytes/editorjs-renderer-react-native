@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Theme Utilities
+ *
+ */
+
 import { useMemo } from "react";
 import type { RendererAppearance } from "../types";
 import { DEFAULT_THEME_STYLE } from "./style";
@@ -23,3 +36,7 @@ export function createStyle<T>(
 ): CreateStyleCallback<T> {
     return callback;
 }
+
+// This is how we know that we live in him and he in us: He has given us
+// of his Spirit.
+// - 1 John 4:13

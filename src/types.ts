@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: types.ts
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Types
+ *
+ */
+
 import type { EditorJSData } from "./editorjs/types";
 
 export enum RendererAppearance {
@@ -37,3 +50,7 @@ export type RendererComponentProps = {
     appearance: RendererAppearance;
     config: RendererConfigFull;
 };
+
+// He chose to give us birth through the word of truth, that we might be a
+// kind of firstfruits of all he created.
+// - James 1:18

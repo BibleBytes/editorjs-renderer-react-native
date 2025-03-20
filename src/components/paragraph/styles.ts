@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: styles.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Paragraph Component Styles
+ *
+ */
+
 import { createStyle } from "@/src/theme";
 import { StyleSheet } from "react-native";
 
@@ -10,3 +23,6 @@ export const styles = createStyle((theme) => {
         },
     });
 });
+
+// And now these three remain: faith, hope and love. But the greatest of these is love.
+// - 1 Corinthians 13:13

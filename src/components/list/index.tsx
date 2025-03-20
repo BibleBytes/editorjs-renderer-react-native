@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: List Component
+ *
+ */
+
 import { useParser } from "@/src/parser";
 import { useStyle } from "@/src/theme";
 import React from "react";
@@ -128,3 +141,6 @@ function getLabelDefault(index: number, depth: number): string {
     }
     return `${String.fromCharCode(97 + index)}.`;
 }
+
+// The Lord will fight for you; you need only to be still.
+// - Exodus 14:14

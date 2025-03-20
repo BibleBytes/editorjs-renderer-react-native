@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: styles.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: List Component Styles
+ *
+ */
+
 import { createStyle } from "@/src/theme";
 import { StyleSheet } from "react-native";
 
@@ -44,3 +57,6 @@ export const styles = createStyle((theme) => {
         },
     });
 });
+
+// I will exalt you, my God the King; I will praise your name for ever and ever.
+// - Psalm 145:1

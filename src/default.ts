@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: default.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Default Components
+ *
+ */
+
 import { Bold } from "./components/bold";
 import { Code } from "./components/code";
 import { Delimiter } from "./components/delimiter";
@@ -31,3 +44,7 @@ export const DEFAULT_RENDERER_CONFIG: RendererConfigFull = {
     },
     enableFallback: true,
 };
+
+// But go and learn what this means: "I desire mercy, not sacrifice." For I
+// have not come to call the righteous, but sinners.
+// - Matthew 9:13

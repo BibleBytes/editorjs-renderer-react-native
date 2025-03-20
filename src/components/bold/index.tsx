@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: types.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Bold Component
+ *
+ */
+
 import { useStyle } from "@/src/theme";
 import React from "react";
 import { Text } from "react-native";
@@ -16,3 +29,7 @@ export const Bold = (props: BoldProps) => {
         </Text>
     );
 };
+
+// If we confess our sins, he is faithful and just and will forgive us
+// our sins and purify us from all unrighteousness.
+// - 1 John 1:9

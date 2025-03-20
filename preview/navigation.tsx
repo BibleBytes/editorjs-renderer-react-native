@@ -1,3 +1,15 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Thur Mar 20 2025
+ *   file: navigation.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Preview - Navigation
+ *
+ */
+
 import { createStyle, useStyle } from "@/src/theme";
 import type { ThemeStyle } from "@/src/theme/types";
 import { RendererAppearance } from "@/src/types";
@@ -61,3 +73,6 @@ const stylesheet = createStyle((theme: ThemeStyle) => {
         },
     });
 });
+
+// Be joyful in hope, patient in affliction, faithful in prayer.
+// - Romans 12:12

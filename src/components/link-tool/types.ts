@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Mon Mar 17 2025
+ *   file: types.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Link Component Types
+ *
+ */
+
 import type { RendererComponentProps } from "@/src/types";
 import type {
     ImageProps,
@@ -40,3 +53,6 @@ export type LinkToolProps = RendererComponentProps & {
         image?: ImageProps;
     };
 };
+
+// Jesus replied, "Very truly I tell you, everyone who sins is a slave to sin."
+// - John 8:34

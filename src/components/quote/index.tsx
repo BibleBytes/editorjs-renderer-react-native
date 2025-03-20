@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Quote Component
+ *
+ */
+
 import { useParser } from "@/src/parser";
 import { useStyle } from "@/src/theme";
 import React from "react";
@@ -53,3 +66,7 @@ export const Quote = (props: QuoteProps) => {
         </View>
     );
 };
+
+// And, once made perfect, he became the source of eternal salvation for
+// all who obey him.
+// - Hebrews 5:9

@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Mon Mar 17 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Link Component
+ *
+ */
+
 import { useStyle } from "@/src/theme";
 import React from "react";
 import { useCallback } from "react";
@@ -98,3 +111,7 @@ export const LinkTool = (props: LinkToolProps) => {
         </TouchableOpacity>
     );
 };
+
+// Whoever gives heed to instruction prospers,
+// and blessed is the one who trusts in the Lord.
+// - Proverbs 16:20

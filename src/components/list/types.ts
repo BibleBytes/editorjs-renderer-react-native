@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: types.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: List Component Types
+ *
+ */
+
 import type { RendererComponentProps } from "@/src/types";
 import type { TextProps, TextStyle, ViewProps, ViewStyle } from "react-native";
 
@@ -52,3 +65,7 @@ export type ItemData = {
 };
 
 export type ListStyle = "ordered" | "unordered";
+
+// And if we are careful to obey all this law before the Lord our God, as he
+// has commanded us, that will be our righteousness.
+// Deuteronomy 6:25

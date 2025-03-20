@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Image Component
+ *
+ */
+
 import { useStyle } from "@/src/theme";
 import React from "react";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -84,3 +97,7 @@ export const Image = (props: ImageProps) => {
         </View>
     );
 };
+
+// But do not forget this one thing, dear friends: With the Lord a day is like
+// a thousand years, and a thousand years are like a day.
+// - 2 Peter 3:8

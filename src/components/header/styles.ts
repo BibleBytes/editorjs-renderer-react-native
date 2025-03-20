@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: styles.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Header Component Styles
+ *
+ */
+
 import { createStyle } from "@/src/theme";
 import { StyleSheet } from "react-native";
 
@@ -33,3 +46,7 @@ export const styles = createStyle((theme) => {
         },
     });
 });
+
+// These are the things God has revealed to us by his Spirit. The Spirit
+// searches all things, even the deep things of God.
+// - 1 Corinthians 2:10

@@ -1,3 +1,15 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Thur Mar 20 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Preview Page
+ *
+ */
+
 import { LinkTool, Renderer } from "@/src";
 import { DEFAULT_THEME_STYLE } from "@/src/theme/style";
 import { RendererAppearance, type RendererConfig } from "@/src/types";
@@ -36,3 +48,6 @@ export default () => {
         </SafeAreaView>
     );
 };
+
+// Be completely humble and gentle; be patient, bearing with one another in love.
+// - Ephesians 4:2

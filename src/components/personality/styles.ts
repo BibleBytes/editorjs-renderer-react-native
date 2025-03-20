@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: styles.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Personality Component Styles
+ *
+ */
+
 import { createStyle } from "@/src/theme";
 import { StyleSheet } from "react-native";
 
@@ -49,3 +62,6 @@ export const styles = createStyle((theme) => {
         },
     });
 });
+
+// Plans fail for lack of counsel, but with many advisers they succeed.
+// - Proverbs 15:22

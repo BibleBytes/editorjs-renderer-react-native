@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Mark Component
+ *
+ */
+
 import { useStyle } from "@/src/theme";
 import React from "react";
 import { Text } from "react-native";
@@ -16,3 +29,6 @@ export const Mark = (props: MarkProps) => {
         </Text>
     );
 };
+
+// Take delight in the Lord, and he will give you the desires of your heart.
+// - Psalm 37:4

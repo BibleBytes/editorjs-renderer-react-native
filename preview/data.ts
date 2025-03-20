@@ -1,3 +1,15 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Thur Mar 20 2025
+ *   file: data.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Preview - EditorJS Data
+ *
+ */
+
 import type { EditorJSData } from "@/src/editorjs/types";
 
 export const EDITOR_DATA: EditorJSData = {
@@ -284,3 +296,7 @@ export const EDITOR_DATA: EditorJSData = {
         },
     ],
 };
+
+// He holds success in store for the upright, he is a shield to those whose
+// walk is blameless.
+// - Proverbs 2:7

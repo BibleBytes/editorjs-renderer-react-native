@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Thur Mar 20 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Underline Component
+ *
+ */
+
 import { useStyle } from "@/src/theme";
 import React from "react";
 import { Text } from "react-native";
@@ -16,3 +29,7 @@ export const Underline = (props: UnderlineProps) => {
         </Text>
     );
 };
+
+// For it is with your heart that you believe and are justified, and it is with
+// your mouth that you profess your faith and are saved.
+// - Romans 10:10

@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Sun Mar 16 2025
+ *   file: style.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Theme Style
+ *
+ */
+
 import { RendererAppearance } from "../types";
 import type { ThemeStyle } from "./types";
 
@@ -16,3 +29,7 @@ export const DEFAULT_THEME_STYLE: { [key in RendererAppearance]: ThemeStyle } =
             textSecondary: "#C0C6D4",
         },
     };
+
+// Let us not become weary in doing good, for at the proper time we will reap
+// a harvest if we do not give up.
+// - Galatians 6:9

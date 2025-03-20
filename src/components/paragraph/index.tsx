@@ -1,3 +1,16 @@
+/*
+ *   Copyright (C) 2024 Bible Bytes.
+ *   distributed under the MIT License
+ *
+ *   original Author: Alexandre Hideki Siroma
+ *   author: Evan Sellers <sellersew@gmail.com>
+ *   date: Wed Mar 19 2025
+ *   file: index.tsx
+ *   project: EditorJS Renderer for React Native
+ *   purpose: Paragraph Component
+ *
+ */
+
 import { useParser } from "@/src/parser";
 import { useStyle } from "@/src/theme";
 import React from "react";
@@ -25,3 +38,6 @@ export const Paragraph = (props: ParagraphProps) => {
         </Text>
     );
 };
+
+// Since you are my rock and my fortress, for the sake of your name lead and guide me.
+// - Psalm 31:3
