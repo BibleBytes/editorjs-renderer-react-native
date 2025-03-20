@@ -1,0 +1,53 @@
+name: Testing
+
+on:
+  pull_request:
+    branches: ["*"]
+
+jobs:
+
+  unit-test:
+
+    name: Unit Tests
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js 22.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Unit Tests
+        run: npm run test
+        
+  linting:
+    name: Linting & Formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+        with:
+          version: latest
+
+      - name: Biome Linting
+        run: biome ci .
+
+      - name: TypeScript Linting
+        run: tsc --noEmit

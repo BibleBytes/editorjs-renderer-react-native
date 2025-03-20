@@ -1,12 +1,15 @@
+<p align="center">
+    <a href="https://mybiblebytes.com/opensource">
+        <img src="https://github.com/BibleBytes/landing-page/blob/main/favicon/android-chrome-512x512.png" height="128px"/>
+        <h1 align="center">EditorJS React Native Renderer</h1>
+    </a>
+</p>
 
-# FIXME - ADD HEADER
 
-
-<style>
-pre, code {
-    tab-size: 4;
-}
-</style>
+<p align="center">
+    <img alt="NPM Version" src="https://img.shields.io/npm/v/%40biblebytes%2Feditorjs-renderer-react-native"/>
+    <img src="https://github.com/BibleBytes/editorjs-renderer-react-native/actions/workflows/testing.yml/badge.svg"/>
+</p>
 
 ---
 
