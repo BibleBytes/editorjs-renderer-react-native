@@ -30,6 +30,7 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+      - run: npm prepare-export-properties
       - run: npm ci
       - run: npm publish
         env:
