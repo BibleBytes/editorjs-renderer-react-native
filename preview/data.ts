@@ -134,6 +134,8 @@ export const EDITOR_DATA: EditorJSData = {
             data: {
                 file: {
                     url: "https://www.tesla.com/tesla_theme/assets/img/_vehicle_redesign/roadster_and_semi/roadster/hero.jpg",
+                    width: 100,
+                    height: 100,
                 },
                 caption: "Roadster // tesla.com",
                 withBorder: false,

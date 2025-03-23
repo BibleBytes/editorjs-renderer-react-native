@@ -42,22 +42,28 @@ export const Image = (props: ImageProps) => {
             return;
         }
         if (props.getImageSize) {
-            const [_width, _height] = props.getImageSize(imageURL);
-            setWidth(containerWidth);
-            setHeight((containerWidth * _height) / _height);
-        } else {
-            NativeImage.getSize(
-                imageURL,
-                (w, h) => {
-                    setWidth(containerWidth);
-                    setHeight((containerWidth * h) / w);
-                },
-                () => {
-                    setHasErrorOnSize(true);
-                },
-            );
+            const file = props.data.file || {
+                url: props.data.url || FAILED_IMAGE_URL,
+            };
+            const dimensions = props.getImageSize(file);
+            if (dimensions) {
+                const [_width, _height] = dimensions;
+                setWidth(containerWidth);
+                setHeight((containerWidth * _height) / _width);
+                return;
+            }
         }
-    }, [imageURL, containerWidth, props.getImageSize]);
+        NativeImage.getSize(
+            imageURL,
+            (w, h) => {
+                setWidth(containerWidth);
+                setHeight((containerWidth * h) / w);
+            },
+            () => {
+                setHasErrorOnSize(true);
+            },
+        );
+    }, [imageURL, props.data, containerWidth, props.getImageSize]);
 
     const onLayout = useCallback((event: LayoutChangeEvent) => {
         setContainerWidth(event.nativeEvent.layout.width);
