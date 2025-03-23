@@ -32,7 +32,7 @@ export type ImageProps = RendererComponentProps & {
         withBackground?: boolean;
         stretched?: boolean;
     };
-    getImageSize?: (file: { url: string }) => [number, number]|undefined;
+    getImageSize?: (file: { url: string }) => [number, number] | undefined;
     style?: {
         container?: ViewStyle;
         image?: NativeImageStyle;
