@@ -10,7 +10,7 @@
  *
  */
 
-import { LinkTool, Renderer } from "@/src";
+import { Image, type ImageProps, LinkTool, Renderer } from "@/src";
 import { DEFAULT_THEME_STYLE } from "@/src/theme/style";
 import { RendererAppearance, type RendererConfig } from "@/src/types";
 import { useState } from "react";
@@ -23,6 +23,22 @@ const RENDERER_CONFIG: RendererConfig = {
     enableFallback: true,
     components: {
         linkTool: LinkTool,
+        image: (props: ImageProps) => (
+            <Image
+                {...props}
+                getImageSize={(file) => {
+                    const _file = file as {
+                        url: string;
+                        width: number | undefined;
+                        height: number | undefined;
+                    };
+                    if (_file.width && _file.height) {
+                        return [_file.width, _file.height];
+                    }
+                    return undefined;
+                }}
+            />
+        ),
     },
 };
 
