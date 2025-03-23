@@ -2,7 +2,7 @@
     "name": "@biblebytes/editorjs-renderer-react-native",
     "version": "0.0.0",
     "export-properties": {
-        "main": "./index.ts",
+        "main": "./dist/index.js",
         "module": "./dist/index.mjs",
         "types": "./dist/index.d.ts"
     },
